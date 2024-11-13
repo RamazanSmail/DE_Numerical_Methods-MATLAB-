@@ -1,0 +1,10 @@
+function [A, B, C] = banded_matrices(n)
+    % Matrix A: Diagonal matrix with elements 1, 2, ..., n on the diagonal
+    A = diag(1:n);
+    
+    % Matrix B: Ones on the superdiagonal and subdiagonal
+    B = diag(ones(1, n-1), 1) + diag(ones(1, n-1), -1);
+    
+    % Matrix C: Threes on the diagonal, fours on the superdiagonal, and ones two above the diagonal
+    C = diag(3 * ones(1, n)) + diag(4 * ones(1, n-1), 1) + diag(ones(1, n-2), 2);
+end
