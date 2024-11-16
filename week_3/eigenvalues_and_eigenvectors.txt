@@ -1,0 +1,12 @@
+% Define matrix A
+% Find eigenvalues, lambda1<lambda2
+A = [-5, 6; 5, -4];
+[V, D] = eig(A);
+lambda1 = D(1,1);
+lambda2 = D(2,2);
+% Find eigenvectors associated with lambda1 and lambda2
+%     Normalize eigenvectors so that their second component is one
+v1 = V(:,1);
+v2 = V(:,2);
+v1 = v1 / v1(2);
+v2 = v2 / v2(2);
